@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from values_1.without_array_1_1 import swap, swap_numbers, pow, super_pow, multiply, specialMultiply, div, factorial, \
-    fib
+    fib, fibMatrix, calculateRange, fastCalculateRange, nod1, nod2
 
 
 class Test_without_array_1_1(TestCase):
@@ -145,3 +145,110 @@ class Test_without_array_1_1(TestCase):
         expectedResult = 1
         result = fib(n)
         self.assertEqual(result, expectedResult, "fib({}) = {}".format(n, expectedResult))
+
+    def test_fibMatrix(self):
+        n = 10
+        expectedResult = 55
+        result = fibMatrix(n)
+        self.assertEqual(result, expectedResult, "fibMatrix({}) = {}".format(n, expectedResult))
+
+    def test_calculateRange(self):
+        n = 5
+        expectedResult = 1.0 + 1.0/1 + 1.0/2.0 + 1.0/6.0 + 1.0/24 + 1.0/120
+        result = calculateRange(n)
+        self.assertEqual(result, expectedResult, "calculateRange({}) = {}".format(n, expectedResult))
+
+    def test_fastCalculateRange_1(self):
+        n = 5
+        expectedResult = 1.0 + 1.0/1 + 1.0/2.0 + 1.0/6.0 + 1.0/24 + 1.0/120
+        result = fastCalculateRange(n)
+        self.assertEqual(result, expectedResult, "calculateRange({}) = {}".format(n, expectedResult))
+
+    def test_fastCalculateRange_2(self):
+        n = 0
+        expectedResult = 1.0
+        result = fastCalculateRange(n)
+        self.assertEqual(result, expectedResult, "calculateRange({}) = {}".format(n, expectedResult))
+
+    def test_fastCalculateRange_3(self):
+        n = 1
+        expectedResult = 1.0 + 1.0 / 1
+        result = fastCalculateRange(n)
+        self.assertEqual(result, expectedResult, "calculateRange({}) = {}".format(n, expectedResult))
+
+    def test_nod1_1(self):
+        a = 46
+        b = 23
+        expectedResult = 23
+        result = nod1(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod1_2(self):
+        a = 0
+        b = 23
+        expectedResult = 0
+        result = nod1(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod1_3(self):
+        a = 99
+        b = 27
+        expectedResult = 9
+        result = nod1(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod1_4(self):
+        a = 55
+        b = 55
+        expectedResult = 55
+        result = nod1(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod1_5(self):
+        a = 55
+        b = 1
+        expectedResult = 1
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod2_1(self):
+        a = 46
+        b = 23
+        expectedResult = 23
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod2_2(self):
+        a = 0
+        b = 23
+        expectedResult = 0
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod2_3(self):
+        a = 99
+        b = 27
+        expectedResult = 9
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod2_4(self):
+        a = 55
+        b = 55
+        expectedResult = 55
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod2_5(self):
+        a = 55
+        b = 1
+        expectedResult = 1
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
+
+    def test_nod2_6(self):
+        a = 0
+        b = 0
+        expectedResult = 0
+        result = nod2(a, b)
+        self.assertEqual(result, expectedResult, "nod1({}, {}) = {}".format(a, b, expectedResult))
